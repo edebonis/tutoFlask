@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<h1> Hola</h1>
+    {% for i in nombre %}
+    <h4> Bienvenidos {{ i.nombre }} {{ i.apellido }}</h4>
+    {%  endfor %}
+{% endblock %}
