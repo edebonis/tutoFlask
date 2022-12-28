@@ -1,0 +1,15 @@
+{% extends 'base_error.html' %}
+{% block title %}
+    {{ super() }}
+    500
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1>Lo sentimos!</h1>
+            <h2>Página no encontrada</h2>
+            <hr>
+            <p>{{ error }}</p>
+        </div>
+    </div>
+{% endblock %}
