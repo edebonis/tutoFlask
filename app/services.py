@@ -50,3 +50,39 @@ def list_categories():
     categories = [schema.dump(c) for c in data]
 
     return categories
+
+
+def get_idea_by_id(idea_id):
+    """Método para obtener ideas por id"""
+    return Idea.query.get(idea_id)
+
+
+def create_idea(idea_data):
+    """Método para crear una idea en la bd."""
+    user = get_user_by_username(
+        idea_data['username']
+    )
+
+    category = get_category_by_id(
+        idea_data['category_id']
+    )
+    idea = Idea(
+        title=idea_data['title'],
+        description=idea_data['description'],
+        is_public=idea_data['is_public'],
+        category=category,
+        user=user
+    )
+
+    db.session.add(idea)
+    db.session.commit()
+
+
+def list_ideas_by_username(username):
+    """ Método para listar ideas por nombre de usuario"""
+    user = get_user_by_username(username)
+    schema = IdeasSchema()
+    data = Idea.query.filter_by(user=user)
+    ideas = [schema.dump(i) for i in data]
+
+    return ideas

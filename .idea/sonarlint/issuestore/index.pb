@@ -17,12 +17,6 @@ M
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 ?
 app/__init__.py,6/b/6b5a07a517e9a3845a279675e888c81b77b9d712
-S
-#app/ideas/templates/ideas/home.html,8/e/8edca8b0b645347cca5d500e5aad36f9079bd963
-?
-app/database.py,7/6/76944dfe74e520e70194061e6ef0184cbb5c6a78
-7
-main.py,f/1/f1bdda93d9a278e358509d498e17d97764c1fb29
 I
 app/templates/navbar.html,0/6/06756495d4f17a02e4c80ad55cc8fcf5909071f6
 =
@@ -37,7 +31,5 @@ D
 app/auth/__init__.py,4/e/4e3f071bae21da4c6d0541eb29b96751a32ab163
 A
 app/auth/views.py,9/b/9bf9452acbf645aa75fae746dadc59487fc2487a
-S
-#app/auth/templates/auth/signup.html,5/f/5f64c2bbba7debb590888a9ba2feaf9bd42188f2
 E
 app/ideas/__init__.py,d/d/ddb210832c774e0f518c13b28c3142afb67805c8

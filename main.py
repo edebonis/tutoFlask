@@ -28,6 +28,12 @@ def index():  # put application's code here
     return render('index.html')
 
 
+@app.template_filter()
+def visibility_public_or_private(visibility):
+    """Filtro de visibilidad de ideas"""
+    return 'Pública' if visibility == True else 'Privada'
+
+
 @app.route('/database')
 def database():  # put application's code here
     init_db()
