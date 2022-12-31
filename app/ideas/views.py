@@ -18,14 +18,14 @@ def categories():
 
     if register_form.validate_on_submit():
         create_category(register_form.name.data)
-        flash("Categoría registrada existosmente", category="success")
+        flash("Categoría registrada exitosamente", category="success")
         return redirect(url_for('ideas.categories'))
     return render('ideas/categories.html', **context)
 
 
-@ideas.route('/category/delete<category_id>', methods=['POST'])
+@ideas.route('/category/delete/<category_id>', methods=['POST'])
 @login_required
-def delete_category(category_id):
+def delete_category_view(category_id):
     delete_category(category_id)
     flash("Categoría eliminada", category="success")
 
