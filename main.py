@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app import create_app
 from app.migrate import init_db
 
+
 app = create_app()
 
 
@@ -13,7 +14,7 @@ db = SQLAlchemy(app)
 
 @app.errorhandler(404)
 def not_found(error):
-    return render('errors/error404.html',error=error)
+    return render('errors/error404.html', error=error)
 
 
 @app.errorhandler(500)
@@ -23,7 +24,7 @@ def internal_server_error():
 
 @app.route('/')
 def index():  # put application's code here
-    flash("index message flash", category='error')
+    #flash("index message flash", category='success')
     return render('index.html')
 
 

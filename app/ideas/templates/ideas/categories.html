@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%  import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros/macroListCategory.html' as macroCategory %}
+{% block title %}
+    {{ super() }}
+    Categorías
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+             <div class="col-md-4">
+                  <h4>Registrar Categorías</h4>
+                 {{ wtf.quick_form(register_form, button_map={'submit': 'primary'}) }}
+             </div>
+            <div class="col-md-8">
+                <h4>Listado de categorías</h4>
+                <div class="container table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in categories %}
+                                {{ macroCategory.render_list(category, delete_form) }}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
