@@ -24,3 +24,13 @@ class IdeaForm(FlaskForm):
     category_id = SelectField("Ideas públicas", validators=[DataRequired()])
 
     submit = SubmitField("Enviar")
+
+
+class DeleteIdeaForm(FlaskForm):
+    """Form para eliminar el idea"""
+    submit = SubmitField("")
+
+
+class PublicarIdeaForm(FlaskForm):
+    """Form para cambiar el estado de una idea"""
+    submit = SubmitField("")

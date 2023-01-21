@@ -84,5 +84,35 @@ def list_ideas_by_username(username):
     schema = IdeasSchema()
     data = Idea.query.filter_by(user=user)
     ideas = [schema.dump(i) for i in data]
-
+    print(ideas)
     return ideas
+
+
+def delete_idea(idea_id):
+    """Método para eliminar idea"""
+    idea = get_idea_by_id(idea_id)
+
+    db.session.delete(idea)
+    db.session.commit()
+
+
+def update_state_idea(idea_id, state):
+    """Método para cambiar el estado de la idea"""
+    idea = get_idea_by_id(idea_id)
+    idea.is_public = not bool(state)
+
+    db.session.commit()
+
+
+def update_idea(idea_data):
+    """Método para actualizar una idea"""
+    category = get_category_by_id(
+        idea_data['category_id']
+    )
+    idea = get_idea_by_id(idea_data['id'])
+
+    idea.title = idea_data["title"]
+    idea.description = idea_data["description"]
+    idea.category = idea_data["category"]
+
+    db.session.commit()

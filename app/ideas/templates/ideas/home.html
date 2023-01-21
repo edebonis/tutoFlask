@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {%  import 'macros/macroModal.html' as macro_modal %}
+{%  import 'macros/macroListIdeas.html' as macro_ideas %}
 {% block title %}
     {{ super() }}
     Home
@@ -19,11 +20,12 @@
                         <th>Descripción</th>
                         <th>Categoría</th>
                         <th>Visibilidad</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for idea in ideas %}
-
+                        {{ macro_ideas.render_list(idea, delete_form, public_idea_form) }}
                     {% endfor %}
                 </tbody>
             </table>
