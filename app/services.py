@@ -88,7 +88,7 @@ def list_ideas_by_username(username):
     return ideas
 
 
-def delete_idea(idea_id):
+def delete_idea_db(idea_id):
     """Método para eliminar idea"""
     idea = get_idea_by_id(idea_id)
 
@@ -96,7 +96,7 @@ def delete_idea(idea_id):
     db.session.commit()
 
 
-def update_state_idea(idea_id, state):
+def update_state_idea_db(idea_id, state):
     """Método para cambiar el estado de la idea"""
     idea = get_idea_by_id(idea_id)
     idea.is_public = not bool(state)
@@ -104,15 +104,17 @@ def update_state_idea(idea_id, state):
     db.session.commit()
 
 
-def update_idea(idea_data):
+def update_idea_db(idea_data):
     """Método para actualizar una idea"""
     category = get_category_by_id(
         idea_data['category_id']
     )
+    print(category)
     idea = get_idea_by_id(idea_data['id'])
 
     idea.title = idea_data["title"]
     idea.description = idea_data["description"]
-    idea.category = idea_data["category"]
+    idea.is_public = idea_data["is_public"]
+    idea.category = category
 
     db.session.commit()

@@ -31,3 +31,11 @@ A
 app/auth/views.py,9/b/9bf9452acbf645aa75fae746dadc59487fc2487a
 E
 app/ideas/__init__.py,d/d/ddb210832c774e0f518c13b28c3142afb67805c8
+=
+app/config.py,e/4/e455b71ce56a02eb2baf1c1e4fea2d900027e3d3
+a
+1app/ideas/templates/macros/macroListCategory.html,2/e/2e929eada5bcf809ee01716b5945b5dfd2748da1
+A
+app/ideas/form.py,7/f/7fb881d358c5074e9f74de70dc7cc0b43842e66f
+<
+app/utils.py,d/2/d2b046108d1c1b522dbbf815ff6124f053f98ac9

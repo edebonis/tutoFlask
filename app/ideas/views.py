@@ -4,7 +4,7 @@ from sqlalchemy.testing.config import ident
 
 from . import ideas
 from app.services import get_category_by_id, delete_category, create_category, list_categories, list_ideas_by_username,\
-    create_idea, delete_idea, update_idea, update_state_idea
+    create_idea, delete_idea_db, update_idea_db, update_state_idea_db, get_idea_by_id
 from .form import DeleteCategoryForm, RegisterCategoryForm, IdeaForm, DeleteIdeaForm, PublicarIdeaForm
 from app.utils import get_dict_from_wftform
 
@@ -69,7 +69,9 @@ def home():
             flash("Idea creada correctamente", category="success")
             return redirect(url_for('ideas.home'))
         else:
-            pass
+            update_idea_db(form_dict)
+            flash("Idea actualizada correctamente", category="success")
+            return redirect(url_for('ideas.home'))
     return render('ideas/home.html', **context)
 
 
@@ -83,9 +85,8 @@ def insertideas_view():
 
 @ideas.route('/delete_idea/<idea_id>', methods=['POST', 'GET'])
 @login_required
-def delete_idea_db(idea_id):
-    print(idea_id)
-    delete_idea(idea_id)
+def delete_idea(idea_id):
+    delete_idea_db(idea_id)
     flash('Idea eliminada exitosamente', category="success")
     return redirect(url_for('ideas.home'))
 
@@ -93,6 +94,23 @@ def delete_idea_db(idea_id):
 @ideas.route('/public_idea/<idea_id>/<int:is_public>', methods=['POST', 'GET'])
 @login_required
 def public_idea(idea_id, is_public):
-    update_state_idea(idea_id, is_public)
+    update_state_idea_db(idea_id, is_public)
     flash('Idea actualizada exitosamente', category="success")
     return redirect(url_for('ideas.home'))
+
+
+@ideas.route('/update_idea/<idea_id>', methods=['POST', 'GET'])
+@login_required
+def update_idea(idea_id):
+    context = context_home()
+    idea_form = context['idea_form']
+    idea = get_idea_by_id(idea_id)
+    idea_form.id.data = idea.id
+    idea_form.title.data = idea.title
+    idea_form.description.data = idea.description
+    idea_form.is_public.data = idea.is_public
+    idea_form.category_id.data = idea.category_id
+
+    context['idea_form'] = idea_form
+    context['modal'] = dict(insert=False, update=True)
+    return render("ideas/home.html", **context)

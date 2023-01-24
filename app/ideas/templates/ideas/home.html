@@ -11,6 +11,9 @@
         {%  if modal['insert'] is true %}
             {{ macro_modal.render_modal('Registro de ideas', idea_form, 'ideas.home', 'primary')}}
         {% endif %}
+        {%  if modal['update'] is true %}
+            {{ macro_modal.render_modal('Actualización de ideas', idea_form, 'ideas.home', 'danger')}}
+        {% endif %}
         <hr>
         <div class="table-responsive">
             <table class="table">
