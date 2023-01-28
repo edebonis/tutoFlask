@@ -13,12 +13,8 @@ M
 app/templates/base_error.html,6/0/60ab68d6689c5400951a5294a6c47e03ac2b1450
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-?
-app/__init__.py,6/b/6b5a07a517e9a3845a279675e888c81b77b9d712
 I
 app/templates/navbar.html,0/6/06756495d4f17a02e4c80ad55cc8fcf5909071f6
-=
-app/models.py,e/9/e919f1e867cfa561970ba9549250f4d5bb90bcf6
 R
 "app/templates/errors/error404.html,3/6/36ec07f0527643ae2e3d732654fea4c6ed911b5f
 R
@@ -29,13 +25,19 @@ D
 app/auth/__init__.py,4/e/4e3f071bae21da4c6d0541eb29b96751a32ab163
 A
 app/auth/views.py,9/b/9bf9452acbf645aa75fae746dadc59487fc2487a
-E
-app/ideas/__init__.py,d/d/ddb210832c774e0f518c13b28c3142afb67805c8
-=
-app/config.py,e/4/e455b71ce56a02eb2baf1c1e4fea2d900027e3d3
 a
 1app/ideas/templates/macros/macroListCategory.html,2/e/2e929eada5bcf809ee01716b5945b5dfd2748da1
 A
 app/ideas/form.py,7/f/7fb881d358c5074e9f74de70dc7cc0b43842e66f
-<
-app/utils.py,d/2/d2b046108d1c1b522dbbf815ff6124f053f98ac9
+Y
+)app/ideas/templates/ideas/categories.html,4/a/4a894089f5e813d2d09f3c9714e6f5726bee004a
+S
+#app/ideas/templates/ideas/home.html,8/e/8edca8b0b645347cca5d500e5aad36f9079bd963
+B
+app/ideas/views.py,b/b/bb055a743faddd7f155cb58c6dcbf912d2e256d9
+^
+.app/ideas/templates/macros/macroListIdeas.html,d/4/d48f11bb82abe0a22cd461799bbcfb41c4f4fdda
+=
+app/config.py,e/4/e455b71ce56a02eb2baf1c1e4fea2d900027e3d3
+E
+app/ideas/__init__.py,d/d/ddb210832c774e0f518c13b28c3142afb67805c8

@@ -1,4 +1,4 @@
-from flask import render_template as render, flash
+from flask import render_template as render, flash, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from app import create_app
 from app.migrate import init_db
@@ -32,6 +32,14 @@ def index():  # put application's code here
 def visibility_public_or_private(visibility):
     """Filtro de visibilidad de ideas"""
     return 'Pública' if visibility == True else 'Privada'
+
+
+@app.route('/profile/picture/<path:filename>')
+def picture_profile(filename):
+    base_url = 'uploads/profile_pictures'
+    if filename == 'none':
+        filename = 'user_default.jpg'
+    return send_from_directory(base_url, filename)
 
 
 @app.route('/database')

@@ -1,7 +1,7 @@
 import bdb
 from .serializer import *
 from .database import *
-
+from .utils import remove_picture_profile
 
 def get_user_by_username(username):
     """devuelve user by username"""
@@ -117,4 +117,13 @@ def update_idea_db(idea_data):
     idea.is_public = idea_data["is_public"]
     idea.category = category
 
+    db.session.commit()
+
+
+def update_profile_picture(username, picture_name_new):
+    """Método para actualizar la foto de perfil de usuario"""
+    user = get_user_by_username(username)
+    if user.avatar is not None:
+        remove_picture_profile(user.avatar)
+    user.avatar = picture_name_new
     db.session.commit()

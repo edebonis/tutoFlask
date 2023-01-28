@@ -5,6 +5,7 @@ from .database import db
 from flask_bootstrap import Bootstrap
 from .auth import auth
 from .ideas import ideas
+from .users import users
 from .models import UserModel
 from flask_fontawesome import FontAwesome
 
@@ -25,7 +26,7 @@ def create_app():
     app.config.from_object(Config)
     app.register_blueprint(ideas)
     app.register_blueprint(auth)
-
+    app.register_blueprint(users)
     login_manager.init_app(app)
 
     db.init_app(app)
