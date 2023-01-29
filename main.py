@@ -2,6 +2,7 @@ from flask import render_template as render, flash, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from app import create_app
 from app.migrate import init_db
+from app.services import list_public_ideas
 
 
 app = create_app()
@@ -24,8 +25,11 @@ def internal_server_error():
 
 @app.route('/')
 def index():  # put application's code here
-    #flash("index message flash", category='success')
-    return render('index.html')
+    context = {
+        'public_ideas' : list_public_ideas()
+    }
+
+    return render('index.html', **context)
 
 
 @app.template_filter()

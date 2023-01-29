@@ -2,8 +2,6 @@
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 G
-app/static/css/main.css,9/a/9a2884656ad0e3e1a25777de825970eb5a52ce8c
-G
 app/static/package.json,8/9/89cc29c1f77a02fe2aa85f1ad0aa5bfddf39edb9
 L
 app/static/package-lock.json,3/3/330cf37119bdc4bfbd7070e2a7ec956d2728462f
@@ -13,8 +11,6 @@ M
 app/templates/base_error.html,6/0/60ab68d6689c5400951a5294a6c47e03ac2b1450
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-I
-app/templates/navbar.html,0/6/06756495d4f17a02e4c80ad55cc8fcf5909071f6
 R
 "app/templates/errors/error404.html,3/6/36ec07f0527643ae2e3d732654fea4c6ed911b5f
 R
@@ -35,9 +31,17 @@ S
 #app/ideas/templates/ideas/home.html,8/e/8edca8b0b645347cca5d500e5aad36f9079bd963
 B
 app/ideas/views.py,b/b/bb055a743faddd7f155cb58c6dcbf912d2e256d9
-^
-.app/ideas/templates/macros/macroListIdeas.html,d/4/d48f11bb82abe0a22cd461799bbcfb41c4f4fdda
 =
 app/config.py,e/4/e455b71ce56a02eb2baf1c1e4fea2d900027e3d3
 E
 app/ideas/__init__.py,d/d/ddb210832c774e0f518c13b28c3142afb67805c8
+?
+app/database.py,7/6/76944dfe74e520e70194061e6ef0184cbb5c6a78
+>
+app/migrate.py,d/3/d34f72922becaf4f76931f758de272367d575ca1
+=
+app/models.py,e/9/e919f1e867cfa561970ba9549250f4d5bb90bcf6
+E
+app/users/__init__.py,1/d/1d41a327a817fb4188facc4593dde2de8df12074
+A
+app/users/form.py,6/9/698f6a78fe1b4c649c5f3194d34958d99c418d68

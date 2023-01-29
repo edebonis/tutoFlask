@@ -127,3 +127,13 @@ def update_profile_picture(username, picture_name_new):
         remove_picture_profile(user.avatar)
     user.avatar = picture_name_new
     db.session.commit()
+
+
+def list_public_ideas():
+    """Método para mostrar las ideas públicas"""
+    data = Idea.query.filter_by(is_public=True).order_by(Idea.category_id)
+    schema = IdeasSchema()
+    print(data)
+    public_ideas = [schema.dump(i) for i in data]
+    return public_ideas
+
